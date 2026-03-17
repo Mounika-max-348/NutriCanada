@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NutriCanada</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:300px;background:#060f0a;font-family:-apple-system,'Segoe UI',sans-serif;color:#f0f8f4;}
+.hdr{padding:14px 16px;background:linear-gradient(135deg,rgba(255,82,40,.1),rgba(20,184,106,.05));border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;}
+.hico{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ff5228,#ff7a42);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(255,82,40,.5);}
+.hname{font-size:16px;font-weight:800;background:linear-gradient(90deg,#ff5228,#f5b82e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hsub{font-size:9px;color:rgba(255,255,255,.3);letter-spacing:1px;text-transform:uppercase;}
+.hpill{margin-left:auto;background:rgba(20,184,106,.1);border:1px solid rgba(20,184,106,.25);border-radius:20px;padding:3px 9px;font-size:9px;color:#4ade80;display:flex;align-items:center;gap:4px;}
+.dot{width:5px;height:5px;background:#14b86a;border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* status */
+.status{margin:14px;padding:13px;border-radius:13px;display:flex;align-items:center;gap:11px;}
+.status.active{background:rgba(20,184,106,.08);border:1px solid rgba(20,184,106,.22);}
+.status.inactive{background:rgba(255,82,40,.06);border:1px solid rgba(255,82,40,.18);}
+.sico{font-size:26px;}
+.stitle{font-size:13px;font-weight:700;margin-bottom:3px;}
+.sdesc{font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;}
+
+/* steps */
+.sec{padding:0 14px 14px;}
+.sec-label{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:9px;}
+.step{display:flex;gap:9px;margin-bottom:8px;align-items:flex-start;}
+.snum{width:22px;height:22px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;}
+.stxt{font-size:11px;color:rgba(255,255,255,.55);line-height:1.55;flex:1;padding-top:2px;}
+.stxt strong{color:#f0f8f4;font-weight:600;}
+
+/* links */
+.links{padding:0 14px 14px;}
+.link-row{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 12px;margin-bottom:6px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.55);transition:all .2s;}
+.link-row:hover{background:rgba(20,184,106,.07);border-color:rgba(20,184,106,.22);color:#4ade80;}
+
+/* foot */
+.foot{padding:10px 14px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;}
+.foot-txt{font-size:9px;color:rgba(255,255,255,.22);}
+.foot-badge{background:rgba(255,82,40,.08);border:1px solid rgba(255,82,40,.18);border-radius:20px;padding:2px 9px;font-size:9px;color:#ff9966;font-weight:700;}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hico">🍁</div>
+  <div><div class="hname">NutriCanada</div><div class="hsub">Recipe Ingredient Finder</div></div>
+  <div class="hpill"><div class="dot"></div><span id="pill">Ready</span></div>
+</div>
+
+<div class="status" id="status-card">
+  <div class="sico" id="sico">🍽️</div>
+  <div>
+    <div class="stitle" id="stitle">Visit a Recipe Page</div>
+    <div class="sdesc" id="sdesc">Navigate to a Canada Food Guide recipe to activate NutriCanada.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">✦ How It Works</div>
+  <div class="step"><div class="snum" style="background:linear-gradient(135deg,#ff5228,#ff7a42)">1</div><div class="stxt">Visit <strong>food-guide.canada.ca/en/recipes/</strong> and open any recipe</div></div>
+  <div class="step"><div class="snum" style="background:linear-gradient(135deg,#14b86a,#3b82f6)">2</div><div class="stxt">NutriCanada <strong>reads the ingredient list</strong> automatically from the page</div></div>
+  <div class="step"><div class="snum" style="background:linear-gradient(135deg,#3b82f6,#8b5cf6)">3</div><div class="stxt">A sidebar shows <strong>matching products from Open Food Facts</strong> with Nutri-Score grades</div></div>
+  <div class="step"><div class="snum" style="background:linear-gradient(135deg,#f5b82e,#fb923c)">4</div><div class="stxt">Click any product → opens <strong>ca.openfoodfacts.org</strong> for full product details</div></div>
+</div>
+
+<div class="links">
+  <div class="sec-label">✦ Try These Recipes</div>
+  <div class="link-row" onclick="openWebapp()" style="background:rgba(20,184,106,.07);border-color:rgba(20,184,106,.22);color:#4ade80;font-weight:700;">🌐 Open NutriCanada Web App</div>
+  <div class="link-row" onclick="go('https://food-guide.canada.ca/en/recipes/mushroom-soup/')">🍄 Mushroom Soup</div>
+  <div class="link-row" onclick="go('https://food-guide.canada.ca/en/recipes/roasted-vegetable-frittata/')">🥚 Roasted Vegetable Frittata</div>
+  <div class="link-row" onclick="go('https://food-guide.canada.ca/en/recipes/lentil-soup/')">🫘 Lentil Soup</div>
+  <div class="link-row" onclick="go('https://food-guide.canada.ca/en/recipes/')">📋 Browse all CFG recipes →</div>
+</div>
+
+<div class="foot">
+  <div class="foot-txt">Open Food Facts · Canada Food Guide</div>
+  <div class="foot-badge">GSOC 2026</div>
+</div>
+
+<script>
+chrome?.tabs?.query({active:true,currentWindow:true},tabs=>{
+  const url = tabs?.[0]?.url||'';
+  const isRecipe = /food-guide\.canada\.ca\/(en\/recipes|fr\/recettes)\/.+/.test(url);
+  if(isRecipe){
+    document.getElementById('status-card').className='status active';
+    document.getElementById('sico').textContent='✅';
+    document.getElementById('stitle').textContent='Active on this recipe!';
+    document.getElementById('sdesc').textContent='NutriCanada is scanning ingredients and finding Open Food Facts products in the sidebar.';
+    document.getElementById('pill').textContent='Active';
+  }
+});
+function go(url){ chrome?.tabs?.create({url})||window.open(url,'_blank'); }
+function openWebapp(){
+  // Open webapp.html bundled inside extension — passes current tab recipe if on CFG
+  chrome?.tabs?.query({active:true,currentWindow:true}, tabs => {
+    const url = tabs?.[0]?.url || '';
+    const match = url.match(/recipes\/([^\/]+)/);
+    const recipe = match ? decodeURIComponent(match[1]).replace(/-/g,' ') : '';
+    const webappUrl = chrome.runtime.getURL('webapp.html') + (recipe ? `?recipe=${encodeURIComponent(recipe)}&from=extension` : '');
+    chrome?.tabs?.create({url: webappUrl});
+  });
+}
+</script>
+</body>
+</html>

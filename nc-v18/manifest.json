@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "NutriCanada",
+  "version": "17.0.0",
+  "description": "Open Food Facts product recommendations on Canada Food Guide recipe pages. GSOC 2026.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://food-guide.canada.ca/*",
+    "https://guide-alimentaire.canada.ca/*",
+    "https://world.openfoodfacts.org/*",
+    "https://ca.openfoodfacts.org/*",
+    "https://api.openfoodfacts.org/*",
+    "http://127.0.0.1:5000/*",
+    "http://localhost:5000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NutriCanada",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://food-guide.canada.ca/en/recipes/*",
+        "https://food-guide.canada.ca/fr/recettes/*",
+        "https://guide-alimentaire.canada.ca/fr/recettes/*",
+        "https://guide-alimentaire.canada.ca/en/recipes/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*"
+      ],
+      "matches": [
+        "https://food-guide.canada.ca/*",
+        "https://guide-alimentaire.canada.ca/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
