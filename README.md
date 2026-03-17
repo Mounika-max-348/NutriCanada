@@ -1,6 +1,6 @@
 # 🍁 NutriCanada — Healthy Eating Guide
 
-> **GSoC 2026 Project** · Open Food Facts Canada · Mentor: Louis Bastarache
+> **GSoC 2026 Project** · Open Food Facts Canada · Mentors: Louis Bastarache,Eloïse Prévôt.
 
 A browser extension and web application that connects recipe websites directly to the **Open Food Facts Canada** database — helping Canadians make healthier, more informed food choices while browsing recipes.
 
