@@ -4,22 +4,11 @@
 
 A browser extension and web application that connects recipe websites directly to the **Open Food Facts Canada** database — helping Canadians make healthier, more informed food choices while browsing recipes.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-joyful--sunflower-brightgreen)](https://joyful-sunflower-1ab11b.netlify.app)
+
 [![OFF Canada](https://img.shields.io/badge/Data-Open%20Food%20Facts%20Canada-orange)](https://ca.openfoodfacts.org)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![GSoC](https://img.shields.io/badge/GSoC-2026-red)](https://summerofcode.withgoogle.com)
 
----
-
-## 🌐 Live Demo
-
-**Web App:** https://joyful-sunflower-1ab11b.netlify.app
-
-**Supported recipe sites (prototype → production):**
-- food-guide.canada.ca ← prototype & proof of concept
-- AllRecipes, Food Network, Ricardo, Zeste ← production targets
-
----
 
 ## 📸 What It Does
 
@@ -59,7 +48,7 @@ NutriCanada/
 │   └── icons/                 # Extension icons (16, 48, 128px)
 │
 ├── webapp/
-│   └── index.html             # Full web app (single file)
+│   └── Nutricanad_Webapp4.html             # Full web app (single file)
 │
 ├── backend/
 │   └── server.py              # Flask + DuckDB local API server
@@ -71,16 +60,8 @@ NutriCanada/
 
 ## 🚀 Quick Start
 
-### 1. Web App (no setup needed)
 
-Just open the live demo:
-👉 https://joyful-sunflower-1ab11b.netlify.app
-
-Or open `webapp/index.html` directly in your browser.
-
----
-
-### 2. Browser Extension
+### 1. Browser Extension
 
 #### Chrome / Edge / Brave / Opera
 
@@ -105,7 +86,7 @@ cd NutriCanada
 
 ---
 
-### 3. Local DuckDB Backend (optional — for fast offline search)
+### . Local DuckDB Backend (optional — for fast offline search)
 
 The backend gives sub-100ms product lookups from a local 117k product database.
 
@@ -240,9 +221,8 @@ Note: `world.openfoodfacts.org/cgi/search.pl` is **not** CORS-enabled and cannot
 - [x] Goal 6 — Recipe Nutri-Score calculator
 - [x] Goal 7 — Allergen detection + sustainability indicators
 - [x] Goal 8 — Healthier product swaps
-- [ ] Goal 9 — Open Prices integration (stretch goal)
-- [x] Goal 10 — CFG integration + local recommendations
-- [x] Goal 11 — Full EN/FR bilingual support
+- [x] Goal 9 — CFG integration + local recommendations
+- [x] Goal 10 — Full EN/FR bilingual support
 
 ---
 
