@@ -236,11 +236,7 @@ This project is developed as part of **Google Summer of Code 2026** with **Open 
 4. Push: `git push origin feat/your-feature`
 5. Open a Pull Request
 
----
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE)
 
 ---
 
