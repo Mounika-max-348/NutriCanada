@@ -6,7 +6,6 @@ A browser extension and web application that connects recipe websites directly t
 
 
 [![OFF Canada](https://img.shields.io/badge/Data-Open%20Food%20Facts%20Canada-orange)](https://ca.openfoodfacts.org)
-[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![GSoC](https://img.shields.io/badge/GSoC-2026-red)](https://summerofcode.withgoogle.com)
 
 
@@ -134,7 +133,7 @@ When offline:
 User on recipe page          User on Web App
        ↓                            ↓
   content.js                 NutriCanada App
-  (DOM scraper)              (joyful-sunflower)
+  (DOM scraper)           
        ↓                            ↓
   background.js  ←────────→  Query Engine
   (MV3 service worker)       DuckDB first → OFF fallback
